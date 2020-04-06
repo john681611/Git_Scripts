@@ -2,4 +2,5 @@
 repo=`git remote -v | grep -m 1 "(push)" | sed -e "s/.*github.com[:/]\(.*\)\.git.*/\1/"`
 branch=`git name-rev --name-only HEAD`
 echo "... creating pull request for branch \"$branch\" in \"$repo\""
+# some linux dist need `xdg-open`
 open https://github.com/$repo/pull/new/$branch &>/dev/null &
